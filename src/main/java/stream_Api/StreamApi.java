@@ -28,18 +28,14 @@ public class StreamApi {
             new Order(3L, "Pending", LocalDate.of(2021, 1, 5), LocalDate.of(2021, 1, 10), List.of(products.get(1)), cust1)
         );
 
-        // 1. for Books > 100
+        
         products.stream().filter(p -> p.category.equals("Books") && p.price > 100).forEach(System.out::println);
-
-        // 2. Orders with Baby category
         orders.stream().filter(o -> o.products.stream().anyMatch(p -> p.category.equals("Baby"))).forEach(o -> System.out.println("Order: " + o.id));
 
-        // 3. Toys with 10% discount
         products.stream().filter(p -> p.category.equals("Toys"))
                 .map(p -> new Product(p.id, p.name, p.category, p.price * 0.9))
                 .forEach(System.out::println);
 
-        // 4. Tier 2 between dates
         orders.stream()
             .filter(o -> o.customer.tier == 2 &&
                         !o.orderDate.isBefore(LocalDate.of(2021, 2, 1)) &&
@@ -47,30 +43,30 @@ public class StreamApi {
             .flatMap(o -> o.products.stream())
             .forEach(System.out::println);
 
-        // 5. Cheapest Book
+        
         products.stream().filter(p -> p.category.equals("Books"))
                 .sorted(Comparator.comparingDouble(p -> p.price))
                 .findFirst().ifPresent(System.out::println);
 
-        // 6. 3 most recent orders
+        
         orders.stream().sorted((o1, o2) -> o2.orderDate.compareTo(o1.orderDate))
                 .limit(3).forEach(o -> System.out.println("Order ID: " + o.id + ", Date: " + o.orderDate));
 
-        // 7. Total value of Feb 2021 orders
+     
         double totalFeb = orders.stream()
             .filter(o -> o.orderDate.getMonthValue() == 2 && o.orderDate.getYear() == 2021)
             .flatMap(o -> o.products.stream())
             .mapToDouble(p -> p.price).sum();
         System.out.println("Total Feb 2021: Rs." + totalFeb);
 
-        // 8. Statistics of Books
+     
         DoubleSummaryStatistics stats = products.stream()
             .filter(p -> p.category.equals("Books"))
             .mapToDouble(p -> p.price)
             .summaryStatistics();
         System.out.println("Books Stats: " + stats);
 
-        // 9. Most expensive product by category
+
         products.stream().collect(Collectors.groupingBy(p -> p.category,
             Collectors.maxBy(Comparator.comparingDouble(p -> p.price))))
             .forEach((cat, prod) -> System.out.println(cat + " => " + prod.orElse(null)));
