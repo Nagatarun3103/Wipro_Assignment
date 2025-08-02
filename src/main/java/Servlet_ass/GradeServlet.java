@@ -3,7 +3,6 @@ package Servlet_ass;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class GradeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -22,15 +21,15 @@ public class GradeServlet extends HttpServlet {
             else if (marks >= 50) grade = "D";
             else grade = "Fail";
         } catch (Exception e) {
-            grade = "Invalid marks input!";
+            grade = "Invalid marks";
         }
 
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<html><head><title>Grade Result</title></head><body>");
-        out.println("<h2>Result for " + name + "</h2>");
-        out.println("<p>Marks: " + marksStr + "</p>");
-        out.println("<p>Grade: <b>" + grade + "</b></p>");
-        out.println("</body></html>");
+        // Set attributes for JSP and forward
+        request.setAttribute("name", name);
+        request.setAttribute("marks", marksStr);
+        request.setAttribute("grade", grade);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/gradeResult.jsp");
+        dispatcher.forward(request, response);
     }
 }

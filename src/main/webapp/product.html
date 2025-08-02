@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Product</title>
+</head>
+<body>
+    <h2>Select a Product</h2>
+    <form method="post" action="ProductServlet">
+        <label for="product">Product:</label>
+        <select name="product" id="product" required>
+            <option value="Laptop" data-price="50000">Laptop - 50,000</option>
+            <option value="Smartphone" data-price="30000">Smartphone - 30,000</option>
+            <option value="Tablet" data-price="20000">Tablet - 20,000</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Next">
+    </form>
+</body>
+</html>

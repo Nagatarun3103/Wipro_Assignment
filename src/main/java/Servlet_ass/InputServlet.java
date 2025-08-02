@@ -7,16 +7,15 @@ import java.io.IOException;
 public class InputServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Get form data
         String name = request.getParameter("name");
         String marks = request.getParameter("marks");
 
-        // Set as request attributes
+        // Pass data as request attributes
         request.setAttribute("name", name);
         request.setAttribute("marks", marks);
 
-        // Forward to GradeServlet
-        RequestDispatcher rd = request.getRequestDispatcher("GradeServlet");
-        rd.forward(request, response);
+        // Forward to GradeServlet (same as target URL pattern in web.xml)
+        RequestDispatcher dispatcher = request.getRequestDispatcher("GradeServlet");
+        dispatcher.forward(request, response);
     }
 }

@@ -22,6 +22,19 @@
     <servlet-name>GradeServlet</servlet-name>
     <servlet-class>Servlet_ass.GradeServlet</servlet-class>
   </servlet>
+  
+  <servlet>
+    <servlet-name>ProductServlet</servlet-name>
+    <servlet-class>Servlet_ass.ProductServlet</servlet-class>
+</servlet>
+
+
+<servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>Servlet_ass.OrderServlet</servlet-class>
+</servlet>
+
+  
 
   <!-- Servlet mappings -->
   <servlet-mapping>
@@ -39,4 +52,16 @@
     <url-pattern>/GradeServlet</url-pattern>
   </servlet-mapping>
 
+<servlet-mapping>
+    <servlet-name>ProductServlet</servlet-name>
+    <url-pattern>/ProductServlet</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/OrderServlet</url-pattern>
+</servlet-mapping>
+
 </web-app>
+
+
