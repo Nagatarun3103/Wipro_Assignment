@@ -5,12 +5,38 @@
 <web-app>
   <display-name>Servlet_Assign</display-name>
 
+  <!-- Other optional elements can come here in the prescribed order -->
+
+  <!-- Servlet declarations -->
   <servlet>
     <servlet-name>RegisterServlet</servlet-name>
     <servlet-class>Servlet_ass.RegisterServlet</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>InputServlet</servlet-name>
+    <servlet-class>Servlet_ass.InputServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>GradeServlet</servlet-name>
+    <servlet-class>Servlet_ass.GradeServlet</servlet-class>
+  </servlet>
+
+  <!-- Servlet mappings -->
   <servlet-mapping>
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>InputServlet</servlet-name>
+    <url-pattern>/InputServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>GradeServlet</servlet-name>
+    <url-pattern>/GradeServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>
