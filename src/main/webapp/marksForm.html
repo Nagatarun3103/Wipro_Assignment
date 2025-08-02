@@ -4,19 +4,21 @@
     <title>Enter Marks</title>
 </head>
 <body>
-    <h2>User Information</h2>
+    <h2>Enter Student Details</h2>
     <form method="post" action="InputServlet">
         <table>
             <tr>
-                <td>User Name</td>
+                <td>Name:</td>
                 <td><input type="text" name="name" required></td>
             </tr>
             <tr>
-                <td>Marks</td>
+                <td>Marks:</td>
                 <td><input type="number" name="marks" min="0" max="100" required></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="submit" value="Submit"/></td>
+                <td colspan="2" style="text-align:center;">
+                    <input type="submit" value="Get Grade">
+                </td>
             </tr>
         </table>
     </form>
