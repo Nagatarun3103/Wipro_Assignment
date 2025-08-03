@@ -1,0 +1,37 @@
+package Servlet_ass;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class UserRegister_jsp extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String birthday = request.getParameter("birthday");
+        String gender = request.getParameter("gender");
+        String profession = request.getParameter("profession");
+        String married = (request.getParameter("married") != null) ? "Yes" : "No";
+        String note = request.getParameter("note");
+
+        // To pass values to JSP, you may use setAttribute, but here we simply print inline HTML:
+        out.println("<!DOCTYPE html><html><head><title>Registration Result</title></head><body>");
+        out.println("<h2>User Registration Successful!</h2>");
+        out.println("<b>Full name:</b> " + fullname + "<br>");
+        out.println("<b>E-mail:</b> " + email + "<br>");
+        out.println("<b>Password:</b> " + password + "<br>");
+        out.println("<b>Birthday:</b> " + birthday + "<br>");
+        out.println("<b>Gender:</b> " + gender + "<br>");
+        out.println("<b>Profession:</b> " + profession + "<br>");
+        out.println("<b>Married?:</b> " + married + "<br>");
+        out.println("<b>Note:</b> " + note + "<br>");
+        out.println("<br><a href=UR_login.jsp'>Register another user</a>");
+        out.println("</body></html>");
+    }
+}

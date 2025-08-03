@@ -5,9 +5,6 @@
 <web-app>
   <display-name>Servlet_Assign</display-name>
 
-  <!-- Other optional elements can come here in the prescribed order -->
-
-  <!-- Servlet declarations -->
   <servlet>
     <servlet-name>RegisterServlet</servlet-name>
     <servlet-class>Servlet_ass.RegisterServlet</servlet-class>
@@ -26,36 +23,30 @@
   <servlet>
     <servlet-name>ProductServlet</servlet-name>
     <servlet-class>Servlet_ass.ProductServlet</servlet-class>
-</servlet>
+  </servlet>
 
-
-<servlet>
+  <servlet>
     <servlet-name>OrderServlet</servlet-name>
     <servlet-class>Servlet_ass.OrderServlet</servlet-class>
-</servlet>
+  </servlet>
 
-<servlet>
-  <servlet-name>LoginServlet</servlet-name>
-  <servlet-class>Servlet_ass.LoginServlet</servlet-class>
-</servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>Servlet_ass.LoginServlet</servlet-class>
+  </servlet>
 
-<servlet>
+  <servlet>
     <servlet-name>BalanceServlet</servlet-name>
     <servlet-class>Servlet_ass.BalanceServlet</servlet-class>
-</servlet>
+  </servlet>
 
-<servlet>
+  <servlet>
     <servlet-name>LogoutServlet</servlet-name>
     <servlet-class>Servlet_ass.LogoutServlet</servlet-class>
-</servlet>
+  </servlet>
 
+<!-- LoginServlet mapping -->
 
-
-
-
-  
-
-  <!-- Servlet mappings -->
   <servlet-mapping>
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/register</url-pattern>
@@ -71,31 +62,29 @@
     <url-pattern>/GradeServlet</url-pattern>
   </servlet-mapping>
 
-<servlet-mapping>
+  <servlet-mapping>
     <servlet-name>ProductServlet</servlet-name>
     <url-pattern>/ProductServlet</url-pattern>
-</servlet-mapping>
+  </servlet-mapping>
 
-<servlet-mapping>
+  <servlet-mapping>
     <servlet-name>OrderServlet</servlet-name>
     <url-pattern>/OrderServlet</url-pattern>
-</servlet-mapping>
+  </servlet-mapping>
 
-<servlet-mapping>
-  <servlet-name>LoginServlet</servlet-name>
-  <url-pattern>/login</url-pattern>
-</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
 
-<servlet-mapping>
+  <servlet-mapping>
     <servlet-name>BalanceServlet</servlet-name>
     <url-pattern>/balance</url-pattern>
-</servlet-mapping>
+  </servlet-mapping>
 
-<servlet-mapping>
+  <servlet-mapping>
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logout</url-pattern>
-</servlet-mapping>
+  </servlet-mapping>
 
 </web-app>
-
-
