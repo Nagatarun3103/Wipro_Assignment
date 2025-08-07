@@ -1,4 +1,6 @@
-package com.javadeveloperzone;
+/*
+ * package com.javadeveloperzone;
+ 
 
 
 import org.springframework.boot.SpringApplication;
@@ -11,9 +13,10 @@ public class SpringBootStaticContentDemoApplication {
     }
 }
 
-//http://localhost:9091/
+//6->http://localhost:9091/
 //7->http://localhost:9094/submitForm
 //8->http://localhost:9094/users
 //9->http://localhost:9094/bookXYZ
 //11->http://localhost:9094/springrest/customers
 //12->http://localhost:9094/books
+*/

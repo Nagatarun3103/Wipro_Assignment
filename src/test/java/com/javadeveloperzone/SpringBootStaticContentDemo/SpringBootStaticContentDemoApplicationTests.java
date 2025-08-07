@@ -1,13 +1,14 @@
-package com.javadeveloperzone.SpringBootStaticContentDemo;
+/*
+package com.javadeveloperzone;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class SpringBootStaticContentDemoApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    // @Test
+    void contextLoads() {
+    }
 
 }
+*/

@@ -1,16 +1,33 @@
 package com.javadeveloperzone.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;  // Add ID field
+
     private String firstName;
     private String lastName;
     private int age;
 
-    // Required no-arg constructor
-    public User() {}
+    public User() {}  
 
-    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -18,6 +35,7 @@ public class User {
     public String getLastName() {
         return lastName;
     }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -25,6 +43,7 @@ public class User {
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
