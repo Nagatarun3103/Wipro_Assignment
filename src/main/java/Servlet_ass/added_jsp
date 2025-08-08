@@ -20,7 +20,6 @@ public class UserRegister_jsp extends HttpServlet {
         String married = (request.getParameter("married") != null) ? "Yes" : "No";
         String note = request.getParameter("note");
 
-        // To pass values to JSP, you may use setAttribute, but here we simply print inline HTML:
         out.println("<!DOCTYPE html><html><head><title>Registration Result</title></head><body>");
         out.println("<h2>User Registration Successful!</h2>");
         out.println("<b>Full name:</b> " + fullname + "<br>");
