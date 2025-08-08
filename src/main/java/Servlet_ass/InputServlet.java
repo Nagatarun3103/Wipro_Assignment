@@ -10,11 +10,11 @@ public class InputServlet extends HttpServlet {
         String name = request.getParameter("name");
         String marks = request.getParameter("marks");
 
-        // Pass data as request attributes
+        
         request.setAttribute("name", name);
         request.setAttribute("marks", marks);
 
-        // Forward to GradeServlet (same as target URL pattern in web.xml)
+         (same as target URL pattern in web.xml)
         RequestDispatcher dispatcher = request.getRequestDispatcher("GradeServlet");
         dispatcher.forward(request, response);
     }
