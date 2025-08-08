@@ -21,7 +21,7 @@ public class ProductServlet extends HttpServlet {
         out.println("<html><head><title>Enter Quantity</title></head><body>");
         out.println("<h2>Enter Quantity for " + product + "</h2>");
         out.println("<form method='post' action='OrderServlet'>");
-        // hidden fields to transmit product and price
+       
         out.println("<input type='hidden' name='product' value='" + product + "'/>");
         out.println("<input type='hidden' name='price' value='" + price + "'/>");
         out.println("Quantity: <input type='number' name='quantity' min='1' value='1' required/>");
