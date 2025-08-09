@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enrollment Form</title>
+</head>
+<body>
+<h2>Enrollment Form</h2>
+
+<form th:action="@{/submitForm}" th:object="${enrollment_form}" method="post">
+
+    <label>First Name:</label><br>
+    <input type="text" th:field="*{firstName}" placeholder="First Name"/><br>
+    <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div><br>
+
+    <label>Last Name:</label><br>
+    <input type="text" th:field="*{lastName}" placeholder="Last Name"/><br>
+    <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div><br>
+
+    <label>Gender:</label><br>
+    <select th:field="*{gender}">
+        <option value="" disabled selected>--Select--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br>
+    <div th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div><br>
+
+    <label>Date of Birth:</label><br>
+    <input type="text" th:field="*{dob}" placeholder="dd-mm-yyyy"/><br>
+    <div th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}"></div><br>
+
+    <label>Email:</label><br>
+    <input type="email" th:field="*{email}" placeholder="Email"/><br>
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div><br>
+
+    <label>Section:</label><br>
+    <input type="text" th:field="*{section}" placeholder="Section"/><br>
+    <div th:if="${#fields.hasErrors('section')}" th:errors="*{section}"></div><br>
+
+    <label>Country:</label><br>
+    <input type="text" th:field="*{country}" placeholder="Country"/><br>
+    <div th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></div><br>
+
+    <label>Subjects:</label><br>
+    <input type="checkbox" th:field="*{subjects}" value="Math"/> Math<br>
+    <input type="checkbox" th:field="*{subjects}" value="Science"/> Science<br>
+    <input type="checkbox" th:field="*{subjects}" value="English"/> English<br>
+    <div th:if="${#fields.hasErrors('subjects')}" th:errors="*{subjects}"></div><br>
+
+    <button type="submit">Register</button>
+
+</form>
+</body>
+</html>
