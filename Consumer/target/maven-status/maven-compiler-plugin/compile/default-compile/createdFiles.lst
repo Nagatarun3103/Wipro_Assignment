@@ -1,0 +1,5 @@
+com\example\Consumer\model\Restaurant.class
+com\example\Consumer\RestaurantClient.class
+com\example\Consumer\ServletInitializer.class
+com\example\Consumer\controller\ConsumerController.class
+com\example\Consumer\ConsumerApplication.class
