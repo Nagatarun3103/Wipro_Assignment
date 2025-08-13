@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Equality & Inequality Checker</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+  let val1 = prompt("Enter the first value:");
+  let val2 = prompt("Enter the second value:");
+
+  let type1 = typeof val1;
+  let type2 = typeof val2;
+
+  if (!isNaN(val2) && val2.trim() !== "") {
+    val2 = Number(val2);
+    type2 = typeof val2;
+  }
+
+  let looseEquality = (val1 == val2);
+  let strictEquality = (val1 === val2);
+  let looseInequality = (val1 != val2);
+  let strictInequality = (val1 !== val2);
+
+  let result = `First Value: ${val1} (${type1})\n` +
+               `Second Value: ${val2} (${type2})\n\n` +
+               `Using == : ${looseEquality} → Equality ignores type differences if possible.\n` +
+               `Using === : ${strictEquality} → Strict equality also checks that the types match.\n` +
+               `Using != : ${looseInequality} → Loose inequality is the opposite of ==.\n` +
+               `Using !== : ${strictInequality} → Strict inequality is true if either the value or type differ.`;
+
+  alert(result);
+</script>
+</body>
+</html>

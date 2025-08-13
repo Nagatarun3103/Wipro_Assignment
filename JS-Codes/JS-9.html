@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Income Tax Calculator with Callbacks</title>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #results {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #333;
+      max-width: 400px;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Income Tax Calculator</h2>
+
+  <form id="taxForm" onsubmit="handleTaxCalculation(event)">
+    <label for="name">Full Name:</label><br />
+    <input type="text" id="name" required /><br />
+
+    <label for="pan">PAN Number:</label><br />
+    <input type="text" id="pan" maxlength="10" minlength="10" required /><br />
+
+    <label for="income">Annual Income (₹):</label><br />
+    <input type="number" id="income" min="0" required /><br /><br />
+
+    <button type="submit">Calculate Tax</button>
+  </form>
+
+  <div id="results"></div>
+
+  <script>
+    const taxRecords = [];
+
+    function calculateTax(name, pan, income, callback) {
+      let tax = 0;
+      if (income > 1000000) {
+        tax = 0.3 * income;
+      } else if (income > 500000) {
+        tax = 0.2 * income;
+      } else if (income > 250000) {
+        tax = 0.05 * income;
+      }
+      tax = Math.round(tax);
+
+      const result = {
+        name: name,
+        pan: pan,
+        income: income,
+        tax: tax
+      };
+
+      callback(result);
+    }
+
+    function logToConsole(result) {
+      console.log("Income Tax Calculation Result:");
+      console.log(`Name: ${result.name}`);
+      console.log(`PAN: ${result.pan}`);
+      console.log(`Annual Income: ₹${result.income.toLocaleString()}`);
+      console.log(`Calculated Tax: ₹${result.tax.toLocaleString()}`);
+    }
+
+    function displayOnPage(result) {
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML =
+        `<h3>Tax Calculation Result</h3>
+         <p><strong>Name:</strong> ${result.name}</p>
+         <p><strong>PAN:</strong> ${result.pan}</p>
+         <p><strong>Annual Income:</strong> ₹${result.income.toLocaleString()}</p>
+         <p><strong>Calculated Tax:</strong> ₹${result.tax.toLocaleString()}</p>`;
+    }
+
+    function saveToRecords(result) {
+      taxRecords.push(result);
+     
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML += `<p>Records saved: ${taxRecords.length}</p>`;
+    }
+
+    function handleTaxCalculation(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      let pan = document.getElementById("pan").value.trim().toUpperCase();
+      const incomeInput = document.getElementById("income").value.trim();
+      const income = Number(incomeInput);
+
+      if (pan.length !== 10) {
+        alert("PAN number must be exactly 10 characters.");
+        return;
+      }
+      if (!name || isNaN(income) || income < 0) {
+        alert("Please fill all fields correctly.");
+        return;
+      }
+
+      calculateTax(name, pan, income, function(result) {
+        logToConsole(result);
+        displayOnPage(result);
+        saveToRecords(result);
+      });
+    }
+  </script>
+</body>
+</html>

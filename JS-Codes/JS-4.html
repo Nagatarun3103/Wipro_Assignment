@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank Customers</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+  let num = parseInt(prompt("Enter number of customers to register:"));
+  let customers = [];
+  for (let i = 0; i < num; i++) {
+    customers.push(prompt(`Enter name of customer ${i+1}:`));
+  }
+
+  document.write("Original Customers: " + customers.join(", ") + "<br>");
+
+  document.write("Customers using for...of: ");
+  for (let name of customers) {
+    document.write(name + " ");
+  }
+  document.write("<br>");
+
+  document.write("Customer IDs using for...in: ");
+  for (let idx in customers) {
+    document.write(idx + " ");
+  }
+  document.write("<br>");
+
+  customers.push("Anita");
+  document.write("After push('Anita'): " + customers.join(", ") + "<br>");
+
+  customers.pop();
+  document.write("After pop(): " + customers.join(", ") + "<br>");
+
+  customers.splice(1, 0, "Vikram");
+  document.write("After insert 'Vikram' at position 1: " + customers.join(", ") + "<br>");
+
+  customers.splice(2, 1);
+  document.write("After delete at position 2: " + customers.join(", ") + "<br>");
+
+  document.write("Final Customers: " + customers.join(", "));
+</script>
+</body>
+</html>

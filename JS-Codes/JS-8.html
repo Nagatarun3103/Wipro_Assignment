@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Switchboard Control</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+  const buildingName = "Sunrise Apartments";
+  let deviceStatus = "OFF";
+  let devices = ["Light", "Fan", "AC"];
+  
+  for (var i = 0; i < devices.length; i++) {
+    deviceStatus = (deviceStatus === "OFF") ? "ON" : "OFF";
+    document.write(`Checking Switch ${i+1}: ${devices[i]} is ${deviceStatus}<br>`);
+  }
+
+  document.write(`All switches checked for ${buildingName}.<br>`);
+  document.write(`Outside loop: var counter is ${i}<br>`);
+
+  try {
+    buildingName = "Rainbow Towers";
+  } catch (e) {
+    console.error(e);
+  }
+</script>
+</body>
+</html>

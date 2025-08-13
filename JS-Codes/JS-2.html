@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Income Tax Calculator</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+
+  let fullName = prompt("Enter your Full Name:");
+  if (!fullName) fullName = "UNKNOWN";
+
+  
+  let pan;
+  do {
+    pan = prompt("Enter your PAN Number (10 uppercase characters):");
+    if (!pan) pan = "";
+    pan = pan.trim().toUpperCase();
+  } while (pan.length !== 10);
+
+  let dob;
+  let age;
+  let today = new Date('2025-08-13'); 
+  while (true) {
+    let dobInput = prompt("Enter your Date of Birth (YYYY-MM-DD):");
+    if (!dobInput) continue;
+    dob = new Date(dobInput);
+    if (dob instanceof Date && !isNaN(dob.getTime())) {
+    
+      age = today.getFullYear() - dob.getFullYear();
+      let m = today.getMonth() - dob.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+        age--;
+      }
+      break;
+    }
+  }
+
+ 
+  let income = 0;
+  while (true) {
+    let incomeInput = prompt("Enter your Annual Income (in ₹):");
+    income = Number(incomeInput);
+    if (!isNaN(income) && income >= 0) break;
+  }
+
+
+  let tax = 0;
+  if (income > 1000000) {
+    tax = 0.3 * income;
+  } else if (income > 500000) {
+    tax = 0.2 * income;
+  } else if (income > 250000) {
+    tax = 0.05 * income;
+  } 
+
+  
+  tax = Math.round(tax);
+
+ 
+  let result =
+    `Name: ${fullName}\n` +
+    `PAN: ${pan}\n` +
+    `Age: ${age} years\n` +
+    `Annual Income: ${income} ₹\n` +
+    `Calculated Tax: ${tax} ₹`;
+
+  alert(result);
+</script>
+</body>
+</html>

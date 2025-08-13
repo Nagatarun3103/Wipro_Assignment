@@ -1,0 +1,15 @@
+body {
+  background-color: #f8f9fa;
+}
+.progress {
+  height: 25px;
+}
+.accordion-button {
+  font-weight: 500;
+}
+.is-valid {
+  border-color: #198754 !important;
+}
+.is-invalid {
+  border-color: #dc3545 !important;
+}

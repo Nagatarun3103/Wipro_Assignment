@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Game</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+       
+        alert("Welcome to the Quiz Game!");
+
+    
+        let userName = prompt("What's your name?");
+
+        if (!userName) {
+            userName = "Player";
+        }
+
+        
+        let ready = confirm("Hi " + userName + "! Are you ready for the quiz?");
+
+        if (ready) {
+            
+            let answer = prompt(
+                "What is the capital of France?\n" +
+                "a) London\n" +
+                "b) Paris\n" +
+                "c) Rome\n" +
+                "Enter a, b, or c:"
+            );
+
+            answer = answer ? answer.toLowerCase() : "";
+
+            if (answer === "b" || answer === "paris") {
+                alert("✅ Correct, " + userName + "! The capital of France is Paris.");
+            } else {
+                alert("❌ Wrong answer, " + userName + ". The correct answer is Paris.");
+            }
+        } else {
+            alert("No problem, " + userName + "! Maybe next time.");
+        }
+    </script>
+</body>
+</html>
