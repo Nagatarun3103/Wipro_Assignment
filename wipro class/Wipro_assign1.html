@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BookWorld - Your Online Bookstore</title>
+  <style>
+    body { font-family: Georgia, 'Times New Roman', Times, serif; margin: 20px; color: #111; }
+    h1 { font-size: 36px; margin-bottom: 10px; }
+    h2 { font-size: 22px; margin: 18px 0 8px; }
+
+    .banner { max-width: 760px; width: 100%; height: auto; display: block; margin-bottom: 12px; }
+    .intro { max-width: 760px; margin-bottom: 20px; }
+
+    table.book-cats { width: 760px; max-width: 100%; border-collapse: collapse; margin-bottom: 22px; }
+    table.book-cats th, table.book-cats td { border: 1px solid #333; padding: 12px; text-align: left; }
+
+    .lists { display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 20px; }
+    .lists > div { flex: 1; min-width: 220px; }
+
+    iframe { max-width: 100%; }
+    form { max-width: 760px; }
+    address { font-style: normal; }
+    footer { margin-top: 30px; font-size: 0.9em; color: #666; }
+
+    @media (max-width: 720px) { .lists { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <h1>Welcome to BookWorld</h1>
+
+  <img src="../Screen shot of project/Book.png" alt="Stack of books on a wooden table (BookWorld banner)" class="banner">
+  <p class="intro">
+    BookWorld is a premier online bookstore. We offer a wide range of titles across every genre — from
+    timeless classics to the latest releases. Browse our categories, check out best-sellers, watch a preview,
+    or sign up to receive our newsletter and special offers.
+  </p>
+
+  <hr>
+
+  <h2>Book Categories</h2>
+  <table class="book-cats">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Number of Books</th>
+        <th>Top Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fiction</td>
+        <td>2,345</td>
+        <td>J.K. Rowling</td>
+      </tr>
+      <tr>
+        <td>Non-Fiction</td>
+        <td>1,789</td>
+        <td>Malcolm Gladwell</td>
+      </tr>
+      <tr>
+        <td>Children's</td>
+        <td>1,234</td>
+        <td>Roald Dahl</td>
+      </tr>
+      <tr>
+        <td>Science</td>
+        <td>980</td>
+        <td>Stephen Hawking</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="lists">
+    <div>
+      <h2>Best-Sellers</h2>
+      <ol>
+        <li>The Great Gatsby — F. Scott Fitzgerald</li>
+        <li>To Kill a Mockingbird — Harper Lee</li>
+        <li>1984 — George Orwell</li>
+        <li>The Catcher in the Rye — J.D. Salinger</li>
+        <li>The Hobbit — J.R.R. Tolkien</li>
+      </ol>
+    </div>
+
+    <div>
+      <h2>Upcoming Releases</h2>
+      <ul>
+        <li>The Midnight Library</li>
+        <li>Project Hail Mary</li>
+        <li>The Four Winds</li>
+        <li>Kiara and the Sun</li>
+        <li>The Lincoln Highway</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Book Preview</h2>
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/3EA10-gy-pg"
+    title="Book preview video" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <hr>
+
+  <h2>Register / Newsletter Signup</h2>
+  <form action="#" method="post">
+    <p>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required>
+    </p>
+
+    <p>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required>
+    </p>
+
+    <p>
+      <label for="genre">Favorite Genre:</label><br>
+      <select id="genre" name="genre">
+        <option>Fiction</option>
+        <option>Non-Fiction</option>
+        <option>Children's</option>
+        <option>Science</option>
+        <option>Fantasy</option>
+        <option>Mystery</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="comments">Comments:</label><br>
+      <textarea id="comments" name="comments" rows="4" cols="40" placeholder="Any notes or requests..."></textarea>
+    </p>
+
+    <p>
+      <input type="submit" value="Submit">
+    </p>
+  </form>
+
+  <hr>
+
+  <h2>Useful Links</h2>
+  <ul>
+    <li><a href="https://www.goodreads.com" target="_blank" rel="noopener noreferrer">Goodreads (open in new tab)</a></li>
+    <li><a href="https://www.gutenberg.org">Project Gutenberg</a></li>
+    <li><a href="https://www.amazon.com/books-used-books-textbooks">Amazon Books</a></li>
+  </ul>
+
+  <hr>
+
+  <h2>Contact Us</h2>
+  <address>
+    BookWorld Bookstore<br>
+    123 Reading Lane<br>
+    Booktown, BK 01234<br>
+    Phone: <a href="tel:+1234567890">+1 (234) 567-890</a><br>
+    Email: <a href="mailto:info@bookworld.example.com">info@bookworld.example.com</a>
+  </address>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2025 BookWorld — All rights reserved.</p>
+  </footer>
+</body>
+</html>
