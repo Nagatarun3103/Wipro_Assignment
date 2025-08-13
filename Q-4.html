@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Feedback Survey</title>
+</head>
+<body>
+  <header>
+    <h1>Website Feedback Survey</h1>
+    <p>We value your opinion. Please take a minute to share your thoughts.</p>
+    <nav>
+      <a href="#">Home</a> |
+      <a href="#">About</a> |
+      <a href="#">Contact</a>
+    </nav>
+    <hr>
+  </header>
+
+  <main>
+    <form action="#" method="post">
+   
+      <section>
+        <h2>Personal Information</h2>
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname" required autofocus><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="10" max="100"><br>
+      </section>
+      <br>
+      
+      <section>
+        <h2>Website Rating</h2>
+        <label for="design">Design (1-10):</label>
+        <input type="range" id="design" name="design" min="1" max="10"><br><br>
+
+        <label>Content Quality:</label><br>
+        <input type="radio" id="excellent" name="content_quality" value="Excellent" required>
+        <label for="excellent">Excellent</label>
+        <input type="radio" id="good" name="content_quality" value="Good">
+        <label for="good">Good</label>
+        <input type="radio" id="average" name="content_quality" value="Average">
+        <label for="average">Average</label>
+        <input type="radio" id="poor" name="content_quality" value="Poor">
+        <label for="poor">Poor</label>
+        <br><br>
+
+        <label for="visited">Most visited page:</label>
+        <select id="visited" name="visited">
+          <option>Home</option>
+          <option>Blog</option>
+          <option>Products</option>
+          <option>Contact</option>
+        </select>
+      </section>
+      <br>
+      
+      <section>
+        <h2>Your Suggestions</h2>
+        <label for="suggestions">Comments/Suggestions:</label><br>
+        <textarea id="suggestions" name="suggestions" rows="3" cols="45" placeholder="Write your suggestions here..."></textarea>
+        <br><br>
+        <input type="checkbox" id="contactAgree" name="contactAgree">
+        <label for="contactAgree">I agree to be contacted regarding my feedback</label>
+      </section>
+      <br>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+  </main>
+
+  <aside style="background:#fffde7; border-left:4px solid #ffe082; padding:12px; margin-top:24px; max-width:350px;">
+    <strong>Why your feedback matters</strong><br>
+    Your feedback helps us improve our website experience for everyone.
+  </aside>
+
+  <footer style="margin-top:30px; text-align:center;">
+    &copy; 2025 Website Survey
+  </footer>
+</body>
+</html>
