@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furniture Store Catalog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fafaf9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 980px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 8px;
+            font-size: 2.4rem;
+            font-weight: bold;
+            color: #232728;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 36px;
+            font-size: 1.13rem;
+        }
+        .catalog {
+            display: flex;
+            gap: 28px;
+            justify-content: center;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(30, 41, 59, 0.06);
+            padding: 28px 20px 28px 20px;
+            text-align: left;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 6px 24px rgba(30, 41, 59, 0.11);
+        }
+        .furn-img {
+            width: 140px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            font-size: 1.15rem;
+            margin: 0 0 8px;
+            font-weight: bold;
+        }
+        .desc {
+            color: #444;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 1.11rem;
+            margin-bottom: 16px;
+            color: #333;
+            align-self: flex-start;
+        }
+        .buy-btn {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            background-color: #2563eb;
+            border: none;
+            border-radius: 7px;
+            padding: 10px 32px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .card:last-child .buy-btn {
+            background-color: #232728;
+        }
+        .buy-btn:hover {
+            opacity: 0.92;
+        }
+        @media (max-width: 900px) {
+            .catalog {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 95%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Furniture Store Catalog</h1>
+        <div class="subtitle">Find the best furniture for your home</div>
+        <div class="catalog">
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/100/000000/sofa.png" alt="Sofa" class="furn-img">
+                <h2>Sofa</h2>
+                <div class="desc">Comfortable and stylish sofa</div>
+                <div class="price">$499</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/100/000000/table.png" alt="Dining Table" class="furn-img">
+                <h2>Dining Table</h2>
+                <div class="desc">Wooden dining table</div>
+                <div class="price">$299</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/100/000000/chair.png" alt="Chair" class="furn-img">
+                <h2>Chair</h2>
+                <div class="desc">Modern chair for any room</div>
+                <div class="price">$149</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

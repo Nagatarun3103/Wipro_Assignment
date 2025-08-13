@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Lab — Gallery</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f6f6f3;
+      margin: 0;
+    }
+    header {
+      background: #47594a;
+      color: #fff;
+      padding: 20px 18px 16px 18px;
+    }
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 38px 44px;
+      background: #fff;
+      padding: 44px 4% 20px 4%;
+    }
+    .gallery-section, .notes-section {
+      flex: 1 1 350px;
+      min-width: 320px;
+      max-width: 480px;
+    }
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px 22px;
+    }
+    .gallery-item {
+      width: 180px;
+      text-align: center;
+      margin-bottom: 7px;
+    }
+    .gallery-item img, .gallery-item svg {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      margin-bottom: 6px;
+      border-radius: 6px;
+      background: #e7e7df;
+    }
+    .gallery-item figcaption {
+      font-size: 1em;
+      color: #222;
+      margin-top: 5px;
+    }
+    .notes-section {
+      background: #f8fcf7;
+      padding: 20px 22px 12px 22px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px #e1eee6;
+      max-width: 328px;
+    }
+    .notes-section h2 {
+      font-size: 1.1em;
+      margin-top: 0;
+    }
+    .notes-section ul {
+      padding-left: 20px;
+    }
+    @media (max-width: 880px) {
+      main { flex-direction: column; gap: 24px; }
+      .gallery-section, .notes-section { max-width: 100%; }
+      .gallery-grid { justify-content: flex-start; }
+    }
+    @media (max-width: 550px) {
+      .gallery-item { width: 100%; }
+      main { padding: 14px 2% 10px 2%; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Image Lab &mdash; Gallery</h1>
+</header>
+<main>
+  <section class="gallery-section">
+    <h2 style="margin-top:0;font-size:1.1em;">Responsive Image Gallery</h2>
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="basmati.jpg" alt="Basmati rice — 5 kg bag." loading="lazy">
+        <figcaption>Basmati rice —5 kg bag.</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <picture>
+          <figure class="gallery-item">
+          <img src="snacks.jpg" alt="Assorted Snacks Box" loading="lazy">
+        </picture>
+        <figcaption>
+          Assorted Snacks Box<br>
+          <span style="font-size:0.92em; color:#8d835a;">(WebP served when supported).</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <svg width="120" height="80" viewBox="0 0 120 80" aria-labelledby="truckTitle truckDesc" role="img">
+          <title id="truckTitle">Delivery truck</title>
+          <desc id="truckDesc">Simple delivery truck icon, light blue body</desc>
+          <rect x="10" y="35" width="70" height="30" fill="#70dedc" stroke="#333" stroke-width="2"/>
+          <rect x="80" y="40" width="30" height="25" fill="#fff" stroke="#333" stroke-width="2"/>
+          <circle cx="22" cy="70" r="8" fill="#0ba" stroke="#222" stroke-width="2"/>
+          <circle cx="90" cy="70" r="8" fill="#0ba" stroke="#222" stroke-width="2"/>
+        </svg>
+        <figcaption>
+          Delivery truck (SVG inline<br>with accessible title/desc).
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <svg width="120" height="80" viewBox="0 0 120 80" aria-hidden="true" focusable="false">
+          <rect x="20" y="35" width="80" height="10" fill="#8d5821"/>
+          <rect x="20" y="45" width="80" height="6" fill="#be9872"/>
+        </svg>
+        <figcaption>
+          Decorative divider<br>
+          <span style="font-size:0.92em; color:#756;">(not read by screen readers).</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="store-map.jpg" usemap="#storemap" alt="Store aisle map" loading="lazy">
+        <map name="storemap">
+          <area shape="rect" coords="5,20,60,65" href="#rice-aisle" alt="Rice aisle">
+          <area shape="rect" coords="65,20,115,65" href="#snacks-aisle" alt="Snacks aisle">
+        </map>
+        <figcaption>
+          Click a section to navigate to that aisle<br>
+          <span style="font-size:0.92em;">(image map)</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  <aside class="notes-section">
+    <h2>Notes</h2>
+    <ul>
+      <li>Use <code>srcset</code> and <code>&lt;picture&gt;</code> to reduce bandwidth and serve modern formats.</li>
+      <li>Add <code>loading=</code>lazy to defer-screen images.</li>
+    </ul>
+  </aside>
+</main>
+<section class="submit-section">
+  <form>
+    <label for="submitBtn" style="font-weight:bold;">Submit Lab</label><br>
+    <button id="submitBtn" type="submit">Submit Lab</button>
+  </form>
+</section>
+</body>
+</html>

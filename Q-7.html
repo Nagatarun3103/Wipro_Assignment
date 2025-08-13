@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Multimedia Lab</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background: #fff;
+      max-width: 650px;
+      margin: 40px auto 40px auto;
+      box-shadow: 0 2px 14px #ccc;
+      border-radius: 10px;
+      padding: 36px 28px 38px 28px;
+    }
+    h1 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 2em;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    section {
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e7e7e7;
+    }
+    section:last-of-type {
+      border: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+    }
+    video, audio, object, iframe, svg {
+      display: block;
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+    .pdf-embed {
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      width: 160px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #faf7f5;
+      margin-bottom: 10px;
+    }
+    .pdf-link {
+      margin-top: 4px;
+    }
+    .iframe-lab {
+      border: 1px solid #c0c0c0;
+      height: 90px;
+      border-radius: 4px;
+      width: 100%;
+      background: #fbfbfb;
+    }
+    .svg-preview {
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>HTML5 Multimedia Lab</h1>
+    <p>This page demonstrates video, audio, embed (PDF), iframe, and inline SVG. Below is a visual preview.</p>
+    
+    <section>
+      <label for="vid">Video (sample.mp4)</label>
+      <video id="vid" width="340" height="200" controls poster="poster.jpg">
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+    
+    <section>
+      <label for="audio">Audio (sample.mp3)</label>
+      <audio id="audio" controls loop>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+    
+    <section>
+      <label>Embed (document.pdf)</label>
+      <div class="pdf-embed">
+        <object data="document_ht.pdf" type="application/pdf" width="100%" height="100%">
+          <a href="document_ht.pdf" class="pdf-link">PDF<br>If not visible, download document.pdf</a>
+        </object>
+      </div>
+    </section>
+    
+    <section>
+      <label for="demo-iframe">Iframe (demo.html)</label>
+      <iframe id="demo-iframe" class="iframe-lab" src="demo.html" title="Embedded page preview"></iframe>
+    </section>
+    
+    <section>
+      <label>Inline SVG</label>
+      <div class="svg-preview">
+        <svg width="120" height="80" viewBox="0 0 120 80" aria-labelledby="playTitle" style="display:block;">
+          <title id="playTitle">Red play triangle in video-style rectangle</title>
+          <rect x="0" y="0" width="120" height="80" rx="12" fill="#f8f8f8" stroke="#bbb" stroke-width="2"/>
+          <polygon points="50,30 80,50 50,70" fill="#e52525"/>
+        </svg>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
