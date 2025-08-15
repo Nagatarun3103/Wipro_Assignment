@@ -1,0 +1,15 @@
+package com.example.uber_consumer;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication(scanBasePackages = "com.example.uber_consumer")
+public class UberConsumerApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(UberConsumerApplication.class, args);
+    }
+}
+
+
+//http://localhost:8080/api/ride/book
+
